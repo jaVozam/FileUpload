@@ -37,7 +37,7 @@ router.post('/upload', (req, res) => {
 
         const files = data;
 
-        db.writeDb('files', {
+        db.addData('files', {
             "id": files.length > 0
                 ? Math.max(...files.map(u => u.id)) + 1
                 : 1, "name": uploadedFile.name, "path": "./files/" + uploadedFile.name
